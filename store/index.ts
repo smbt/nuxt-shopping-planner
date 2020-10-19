@@ -13,6 +13,12 @@ export const state = (): _state => {
                 product: {id: uuid(), name: "Toast"},
                 amount: 3,
                 done: false,
+                dueDate: moment().add(7, 'days').format()
+            },
+            {
+                product: {id: uuid(), name: "Milch"},
+                amount: 3,
+                done: false,
                 dueDate: moment().format()
             }
         ]
