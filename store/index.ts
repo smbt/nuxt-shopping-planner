@@ -1,3 +1,6 @@
+// node modules
+import createPersistedState from 'vuex-persistedstate';
+
 // types
 import { state as _state } from '~/types/state'
 import { listItem } from '~/types/listItem'
@@ -29,3 +32,5 @@ export const mutations = {
         state.shoppingList.splice(state.shoppingList.indexOf(listItem), 1)
     },
 }
+
+export const plugins = [createPersistedState()]

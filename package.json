@@ -7,7 +7,7 @@
         "build": "nuxt-ts build",
         "start": "nuxt-ts start",
         "generate": "nuxt-ts generate",
-    "test": "jest"
+        "test": "jest --watch --silent"
     },
     "dependencies": {
         "@nuxt/typescript-runtime": "^2.0.0",
