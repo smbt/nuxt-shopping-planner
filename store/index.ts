@@ -26,8 +26,8 @@ export const state = (): _state => {
 }
 
 export const mutations = {
-    crate(state: _state, listItem: listItem) {
-        state.shoppingList.push(listItem)
+    create(state: _state, listItem: listItem) {
+        state.shoppingList.unshift(listItem)
     },
     update(state: _state, updatedListItem: listItem) {
         const index = state.shoppingList.findIndex(
