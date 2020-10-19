@@ -19,7 +19,7 @@
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title v-text="item.title"/>
+                        <v-list-item-title v-text="item.title" />
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
@@ -27,14 +27,18 @@
         <v-app-bar
             :clipped-left="clipped"
             fixed
-            app
+            appp
         >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-            <v-toolbar-title v-text="title"/>
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+            <v-toolbar-title v-text="title" />
+            <v-spacer />
+            <v-switch :value="$store.state.debug"
+                      @click="$store.commit('toggleDebug')"
+                      style="margin-top: 25px; float: right"></v-switch>
         </v-app-bar>
         <v-main>
             <v-container>
-                <nuxt/>
+                <nuxt />
             </v-container>
         </v-main>
         <v-footer
@@ -57,14 +61,24 @@ export default {
                 {
                     icon: '',
                     title: 'Home',
-                    to: '/'
+                    to: '/',
                 },
             ],
             miniVariant: false,
             right: true,
             rightDrawer: false,
-            title: 'Einkaufsplaner'
+            title: 'Einkaufsplaner',
         }
-    }
+    },
+    computed: {
+        debug: {
+            get() {
+                return this.$store.state.debug
+            },
+            set(value) {
+                this.$store.commit('toggleDebug')
+            },
+        },
+    },
 }
 </script>

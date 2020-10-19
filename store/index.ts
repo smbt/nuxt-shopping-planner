@@ -1,31 +1,21 @@
-// node modules
-import {v4 as uuid} from 'uuid'
-import moment from 'moment'
-
 // types
-import {state as _state} from '~/types/state'
-import {listItem} from '~/types/listItem'
+import { state as _state } from '~/types/state'
+import { listItem } from '~/types/listItem'
+
+// utils
+import { getRandomListItems } from '~/utils/listItemFactory'
 
 export const state = (): _state => {
     return {
-        shoppingList: [
-            {
-                product: {id: uuid(), name: "Toast"},
-                amount: 3,
-                done: false,
-                dueDate: moment().add(7, 'days').format()
-            },
-            {
-                product: {id: uuid(), name: "Milch"},
-                amount: 3,
-                done: false,
-                dueDate: moment().format()
-            }
-        ]
+        debug: false,
+        shoppingList: [],
     }
 }
 
 export const mutations = {
+    toggleDebug(state: _state) {
+        state.debug = !state.debug
+    },
     create(state: _state, listItem: listItem) {
         state.shoppingList.unshift(listItem)
     },
