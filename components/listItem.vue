@@ -3,7 +3,7 @@
         <v-list-item-content @click="updateListItem" :class="{done: item.done}">
             <v-list-item-title v-html="item.amount + ' x ' + item.product.name"></v-list-item-title>
             <v-list-item-subtitle
-                v-text="'Fällig: ' + moment(item.dueDate).format( 'DD.MM.YYYY')"></v-list-item-subtitle>
+                v-text="'Fällig: ' + moment(item.dueDate).format( 'DD.MM.YYYY, HH:mm:ss') + ' Uhr'"></v-list-item-subtitle>
         </v-list-item-content>
         <v-icon @click="deleteListItem">mdi-delete</v-icon>
     </v-list-item>
