@@ -5,8 +5,7 @@ import createPersistedState from 'vuex-persistedstate';
 import { state as _state } from '~/types/state'
 import { listItem } from '~/types/listItem'
 
-// utils
-import { getRandomListItems } from '~/utils/listItemFactory'
+export const plugins = [createPersistedState()]
 
 export const state = (): _state => {
     return {
