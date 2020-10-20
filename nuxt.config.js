@@ -24,6 +24,7 @@ export default {
     ],
     modules: [
         '@nuxtjs/axios',
+        '@nuxtjs/onesignal',
         '@nuxtjs/pwa',
     ],
     axios: {},
@@ -46,6 +47,15 @@ export default {
     },
     build: {},
     manifest: {
-        short_name: 'EinkaufsplanerEinkaufsplaner'
-    }
+        short_name: 'EinkaufsplanerEinkaufsplaner',
+    },
+    oneSignal: {
+        init: {
+            appId: 'YOUR_APP_ID',
+            allowLocalhostAsSecureOrigin: true,
+            welcomeNotification: {
+                disable: true,
+            },
+        },
+    },
 }
