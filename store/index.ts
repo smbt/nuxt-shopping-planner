@@ -31,5 +31,3 @@ export const mutations = {
         state.shoppingList.splice(state.shoppingList.indexOf(listItem), 1)
     },
 }
-
-export const plugins = [createPersistedState()]
