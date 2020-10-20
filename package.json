@@ -7,7 +7,7 @@
         "build": "nuxt-ts build",
         "start": "nuxt-ts start",
         "generate": "nuxt-ts generate",
-        "test": "jest --watch --silent"
+        "test": "jest --silent"
     },
     "dependencies": {
         "@nuxt/typescript-runtime": "^2.0.0",
@@ -16,6 +16,7 @@
         "@nuxtjs/pwa": "^3.0.2",
         "@types/uuid": "^8.3.0",
         "core-js": "^3.6.5",
+        "lodash": "^4.17.20",
         "moment": "^2.29.1",
         "nuxt": "^2.14.6",
         "uuid": "^8.3.1",
