@@ -47,7 +47,7 @@ export default {
     },
     build: {},
     manifest: {
-        short_name: 'EinkaufsplanerEinkaufsplaner',
+        short_name: 'Einkaufsplaner',
     },
     oneSignal: {
         init: {
