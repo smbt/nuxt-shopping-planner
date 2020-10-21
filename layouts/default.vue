@@ -32,9 +32,11 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
             <v-toolbar-title v-text="title" />
             <v-spacer />
-            <v-switch :value="$store.state.debug"
-                      @click="$store.commit('toggleDebug')"
-                      style="margin-top: 25px; float: right"></v-switch>
+            <v-switch
+                id="debug-toggler"
+                :value="$store.state.debug"
+                @click="$store.commit('toggleDebug')"
+                style="margin-top: 25px; float: right"></v-switch>
         </v-app-bar>
         <v-main>
             <v-container>
@@ -75,7 +77,7 @@ export default {
             get() {
                 return this.$store.state.debug
             },
-            set(value) {
+            set() {
                 this.$store.commit('toggleDebug')
             },
         },
