@@ -1,11 +1,9 @@
 // node modules
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
+// import Vuex from 'vuex'
 
 // components
 import shoppingList from '~/components/shoppingList'
-
-// utils
-import { getRandomListItem } from '~/utils/listItemFactory'
 
 describe('shoppingList', () => {
     test('is a Vue instance', () => {
