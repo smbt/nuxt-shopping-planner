@@ -71,6 +71,7 @@ export default {
                 dueDate: moment().add(3, 'days').format(),
             }
             this.newItemProductName = ' '
+            this.newItemAmount = 1
             this.$store.commit('create', newItem)
         }, createRandom() {
             for (let i = 0; i < 10; i++) {
