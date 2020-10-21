@@ -3,7 +3,8 @@
         <v-list-item-content @click="updateListItem" :class="{done: item.done}">
             <v-list-item-title v-html="item.amount + ' x ' + item.product.name"></v-list-item-title>
             <v-list-item-subtitle
-                v-text="'Fällig: ' + moment(item.dueDate).format( 'DD.MM.YYYY, HH:mm:ss') + ' Uhr'"></v-list-item-subtitle>
+                v-text="'Fällig: ' + moment(item.dueDate).format( 'DD.MM.YYYY, HH:mm:ss') + ' Uhr'">
+            </v-list-item-subtitle>
         </v-list-item-content>
         <v-icon @click="deleteListItem">mdi-delete</v-icon>
     </v-list-item>
@@ -23,6 +24,17 @@ export default {
         },
         deleteListItem() {
             this.$store.commit('delete', this.item)
+        },
+    },
+    computed: {
+        dateDiff() {
+            const now = moment()
+            const dueDate = moment(this.item.dueDate)
+            // const daysLeft = dueDate.diff(now, 'days')
+            // const hoursLeft = dueDate.diff(now, 'hours')
+            // const minutesLeft = dueDate.diff(now, 'minutes')
+            const secondsLeft = dueDate.diff(now, 'seconds')
+            return secondsLeft
         },
     },
 }

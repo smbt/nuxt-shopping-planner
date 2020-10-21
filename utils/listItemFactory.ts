@@ -12,7 +12,7 @@ const getRandomArrayElement = (array: any[]) => {
 export const getRandomListItem = (): listItem => {
     const productNames = ['Toast', 'Milch', 'Käse', 'Eier']
     const amounts = [1, 5, 7, 8]
-    const timeFrames = ['seconds', 'minutes', 'hours', 'days', 'years']
+    const timeFrames = ['seconds', 'minutes', 'hours', 'days']
 
     return {
         product: { id: uuid(), name: getRandomArrayElement(productNames) },
