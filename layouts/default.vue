@@ -61,9 +61,14 @@ export default {
             fixed: false,
             items: [
                 {
-                    icon: '',
+                    icon: 'mdi-home',
                     title: 'Home',
                     to: '/',
+                },
+                {
+                    icon: 'mdi-shovel',
+                    title: 'Sandbox',
+                    to: '/sandbox',
                 },
             ],
             miniVariant: false,

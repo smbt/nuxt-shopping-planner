@@ -1,5 +1,5 @@
 {
-    "name": "Einkaufsplaner",
+    "name": "einkaufsplaner",
     "version": "1.0.0",
     "private": true,
     "scripts": {
@@ -7,7 +7,9 @@
         "build": "nuxt-ts build",
         "start": "nuxt-ts start",
         "generate": "nuxt-ts generate",
-        "test": "jest --silent"
+        "test": "jest --silent",
+        "test:helpers": "jest --watch helpers --verbose",
+        "test:listItemFactory": "jest --watch listItemFactory"
     },
     "dependencies": {
         "@nuxt/typescript-runtime": "^2.0.0",
