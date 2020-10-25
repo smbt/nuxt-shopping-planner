@@ -1,5 +1,5 @@
 // node modules
-import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 
 // components
@@ -29,16 +29,11 @@ describe('shoppingList', () => {
         expect(wrapper.vm).toBeTruthy()
     })
 
-    test('create works', () => {
+    test('create works', async () => {
         const wrapper = shallowMount(shoppingList, { store, localVue })
 
-        const productNameInput = wrapper.find('#productNameInput')
-        productNameInput.element.value = "Testproduct"
-        
-        console.log('productNameInput:',productNameInput)
-
-        const createItemInput = wrapper.find('#createItemInput')
-        createItemInput.trigger('click')
+        await wrapper.setData({ newItemProductName: 'Testproduct' })
+        wrapper.find('#createItemInput').trigger('click')
 
         expect(mutations.create).toHaveBeenCalled()
     })

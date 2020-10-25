@@ -1,5 +1,5 @@
 // node modules
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 
 // components
@@ -22,9 +22,7 @@ describe('listItem', () => {
 
         store = new Vuex.Store({
             mutations,
-            props: {
-                item: getRandomListItem(),
-            },
+
         })
     })
 
@@ -38,9 +36,16 @@ describe('listItem', () => {
         expect(wrapper.vm).toBeTruthy()
     })
 
-    // test('can delete an item', () => {
-    //     const wrapper =shallowMount(listItem, {
-    //
-    //     })
-    // })
+    test('can delete an item', () => {
+        const wrapper = mount(listItem, {
+            store,
+            localVue,
+            propsData: {
+                item: getRandomListItem(),
+            },
+        })
+        const deleteButton = wrapper.find('#deleteListItem')
+        deleteButton.trigger('click')
+        expect(mutations.delete).toHaveBeenCalled()
+    })
 })
