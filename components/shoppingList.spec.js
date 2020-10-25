@@ -25,7 +25,7 @@ describe('shoppingList', () => {
     })
 
     test('is a Vue instance', () => {
-        const wrapper = mount(shoppingList, { store, localVue })
+        const wrapper = shallowMount(shoppingList, { store, localVue })
         expect(wrapper.vm).toBeTruthy()
     })
 

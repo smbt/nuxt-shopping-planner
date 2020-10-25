@@ -15,7 +15,7 @@
     </div>
 </template>
 <script>
-import { helpers } from '~/utils/helpers'
+import { fetchUsers } from '@/utils'
 import user from '~/components/sandbox/user'
 
 export default {
@@ -25,7 +25,7 @@ export default {
         }
     },
     async created() {
-        this.users = await helpers.fetchUsers()
+        this.users = await fetchUsers()
     },
     components: [user],
 }

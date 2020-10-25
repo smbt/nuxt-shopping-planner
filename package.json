@@ -7,9 +7,7 @@
         "build": "nuxt-ts build",
         "start": "nuxt-ts start",
         "generate": "nuxt-ts generate",
-        "test": "jest --silent",
-        "test:helpers": "jest --watch helpers --verbose",
-        "test:listItemFactory": "jest --watch listItemFactory"
+        "test": "jest --silent"
     },
     "dependencies": {
         "@nuxt/typescript-runtime": "^2.0.0",
