@@ -6,7 +6,7 @@
                 v-text="'Fällig: ' + moment(item.dueDate).format( 'DD.MM.YYYY, HH:mm:ss') + ' Uhr'">
             </v-list-item-subtitle>
         </v-list-item-content>
-        <v-icon @click="deleteListItem">mdi-delete</v-icon>
+        <v-icon @click="deleteListItem" id="deleteListItem">mdi-delete</v-icon>
     </v-list-item>
 </template>
 
