@@ -3,7 +3,7 @@
         <h1>Sandbox</h1>
         <div v-if="users">
             <div v-for="user in users" :key="user.id">
-                test
+                updated
             </div>
         </div>
         <v-skeleton-loader height="10" width="40" />
