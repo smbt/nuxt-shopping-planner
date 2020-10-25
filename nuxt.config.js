@@ -46,8 +46,24 @@ export default {
         },
     },
     build: {},
-    manifest: {
-        short_name: 'Einkaufsplaner',
+    pwa: {
+        manifest: {
+            name: 'Einkaufsplaner',
+            short_name: 'Einkaufsplaner',
+            shortcuts: [
+                {
+                    'name': 'Go to sandbox',
+                    'short_name': 'Sandbox',
+                    'description': '-',
+                    'url': '/sandbox',
+                },
+            ],
+            icons: [{
+                'src': 'static/icon.png',
+                'sizes': '225x225',
+                'type': 'image/png',
+            }],
+        },
     },
     oneSignal: {
         init: {
