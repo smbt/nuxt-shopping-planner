@@ -33,7 +33,7 @@
             <v-toolbar-title v-text="title" />
             <v-spacer />
             <v-switch
-                id="debug-toggler"
+                id="debugToggler"
                 :value="$store.state.debug"
                 @click="$store.commit('toggleDebug')"
                 style="margin-top: 25px; float: right"></v-switch>

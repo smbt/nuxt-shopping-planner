@@ -7,13 +7,21 @@ import { helpers } from '@/utils/helpers'
 // afterAll(() => console.log('afterAll ############################'))
 
 describe('fetchUsers:', () => {
-    test('returns something', async () => {
-        expect(await helpers.fetchUsers())
+    test('Returns something', async () => {
+        const response = await helpers.fetchUsers()
+        expect(response)
             .toBeTruthy()
     })
 
-    test('fetched user has property id', async () => {
-        expect((await helpers.fetchUsers())[0])
+    test('Returns an array', async () => {
+        const response = await helpers.fetchUsers()
+        expect(Array.isArray(response))
+            .toBeTruthy()
+    })
+
+    test('Fetched user has property \'id\'', async () => {
+        const response = await helpers.fetchUsers()
+        expect(response[0])
             .toHaveProperty('id')
     })
 })

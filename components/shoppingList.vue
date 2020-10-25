@@ -14,6 +14,7 @@
                                             v-model="newItemProductName"
                                             :counter="20"
                                             label="Produkt"
+                                            id="productNameInput"
                                         ></v-text-field>
                                     </v-col>
                                     <v-col cols="4" md="3">
@@ -23,7 +24,7 @@
                                         ></v-text-field>
                                     </v-col>
                                     <v-col cols="3">
-                                        <v-btn @click="createItem">OK</v-btn>
+                                        <v-btn @click="createItem" id="createItemInput">OK</v-btn>
                                     </v-col>
                                 </v-row>
                                 <v-row v-if="this.$store.state.debug">
