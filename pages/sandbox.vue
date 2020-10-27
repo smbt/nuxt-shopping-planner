@@ -41,9 +41,9 @@ export default {
                                     serviceWorkerRegistration.showNotification('Notification from SW')
                                 })
                         }
-                        // new Notification('You are subscribed to notifications from this site.', {
-                        //     body: 'Thanks.',
-                        // })
+                        new Notification('You are subscribed to notifications from this site.', {
+                            body: 'Thanks.',
+                        })
                     } else {
                         console.log('Notification permission denied')
                     }
